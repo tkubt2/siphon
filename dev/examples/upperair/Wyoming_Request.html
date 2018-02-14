@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Wyoming Upper Air Data Request &mdash; Siphon 0.6.0+36.g03d1047 documentation</title>
+  <title>Wyoming Upper Air Data Request &mdash; Siphon 0.6.1+30.g935d195 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Siphon 0.6.0+36.g03d1047 documentation" href="../../index.html"/>
+    <link rel="top" title="Siphon 0.6.1+30.g935d195 documentation" href="../../index.html"/>
         <link rel="up" title="Siphon Examples" href="../index.html"/>
         <link rel="next" title="Developer’s Guide" href="../../developerguide.html"/>
         <link rel="prev" title="NCSS and CartoPy" href="../ncss/NCSS_Cartopy_Example.html"/> 
@@ -73,7 +73,7 @@
             
             
               <div class="version">
-                0.6.0
+                0.6.1
               </div>
             
           
@@ -181,35 +181,36 @@
 <span id="sphx-glr-examples-upperair-wyoming-request-py"></span><h1>Wyoming Upper Air Data Request<a class="headerlink" href="#wyoming-upper-air-data-request" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how to use siphon’s <cite>simplewebswervice</cite> support to create a query to
 the Wyoming upper air archive.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
 <span class="kn">from</span> <span class="nn">siphon.simplewebservice.wyoming</span> <span class="kn">import</span> <span class="n">WyomingUpperAir</span>
 </pre></div>
 </div>
 <p>Create a datetime object for the sounding and string of the station identifier.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">station</span> <span class="o">=</span> <span class="s1">&#39;MFL&#39;</span>
 </pre></div>
 </div>
 <p>Make the request (a pandas dataframe is returned).</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <a href="../../api/simplewebservice.html#siphon.simplewebservice.wyoming.WyomingUpperAir.request_data" title="View documentation for siphon.simplewebservice.wyoming.WyomingUpperAir.request_data"><span class="n">WyomingUpperAir</span><span class="o">.</span><span class="n">request_data</span></a><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">station</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <a href="../../api/simplewebservice.html#siphon.simplewebservice.wyoming.WyomingUpperAir.request_data" title="View documentation for siphon.simplewebservice.wyoming.WyomingUpperAir.request_data"><span class="n">WyomingUpperAir</span><span class="o">.</span><span class="n">request_data</span></a><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">station</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Inspect data columns in the dataframe.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">,</span>
+<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">,</span>
        <span class="s1">&#39;u_wind&#39;</span><span class="p">,</span> <span class="s1">&#39;v_wind&#39;</span><span class="p">],</span>
       <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Pull out a specific column of data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span>     <span class="mf">1002.0</span>
+<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>     <span class="mf">1002.0</span>
 <span class="mi">1</span>     <span class="mf">1000.0</span>
 <span class="mi">2</span>      <span class="mf">994.0</span>
 <span class="mi">3</span>      <span class="mf">978.0</span>
@@ -274,26 +275,26 @@ the Wyoming upper air archive.</p>
 </div>
 <p>Units are stored in a dictionary with the variable name as the key in the <cite>units</cite> attribute
 of the dataframe.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">units</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="s1">&#39;hPa&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;meter&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">:</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">,</span> <span class="s1">&#39;u_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">,</span> <span class="s1">&#39;v_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">}</span>
+<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="s1">&#39;hPa&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;meter&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">:</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">,</span> <span class="s1">&#39;u_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">,</span> <span class="s1">&#39;v_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;knot&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">hPa</span>
+<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hPa</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.947 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.852 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/Wyoming_Request.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Wyoming_Request.py</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/Wyoming_Request.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Wyoming_Request.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/Wyoming_Request.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Wyoming_Request.ipynb</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/Wyoming_Request.ipynb" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">Wyoming_Request.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -357,7 +358,7 @@ of the dataframe.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.6.0+36.g03d1047',
+            VERSION:'0.6.1+30.g935d195',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
